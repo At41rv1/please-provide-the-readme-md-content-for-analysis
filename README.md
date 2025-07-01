@@ -1,13 +1,29 @@
 # Tria AI Chat Application
 
-A React + TypeScript + Vite application featuring an AI chat interface with Leo and Max models.
+A React + TypeScript + Vite application featuring an interactive chat interface with multiple AI personalities.
+
+## Features
+
+- **Chat Mode**: Interact with Leo and Max, two distinct AI personalities
+  - Leo: Friendly and conversational
+  - Max: Witty and humorous
+
+- **Study Mode**: Learn with two AI tutors
+  - Structured Tutor: Clear, organized explanations
+  - Creative Tutor: Engaging, story-based learning
+
+- **Technical Features**:
+  - Built with React + TypeScript + Vite
+  - Responsive design with Tailwind CSS
+  - Real-time AI responses using Groq API
+  - Clean and modern UI
 
 ## Setup
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/At41rv1/tria-ai-chat-new.git
-   cd tria-ai-chat-new
+   git clone https://github.com/At41rv1/tria-ai-chat-clean.git
+   cd tria-ai-chat-clean
    ```
 
 2. Install dependencies:
@@ -23,8 +39,13 @@ A React + TypeScript + Vite application featuring an AI chat interface with Leo 
    - Edit `src/config/api-keys.ts` and replace the placeholder API keys with your actual Groq API keys:
      ```typescript
      export const API_KEYS = {
-       LEO: 'your_leo_api_key_here',  // Replace with your Leo API key
-       MAX: 'your_max_api_key_here'   // Replace with your Max API key
+       // Chat Mode API Keys
+       LEO: 'your_leo_api_key_here',
+       MAX: 'your_max_api_key_here',
+       
+       // Study Mode API Keys
+       TUTOR1: 'your_tutor1_api_key_here',
+       TUTOR2: 'your_tutor2_api_key_here'
      };
      ```
 
@@ -44,25 +65,33 @@ Run the preview server:
 npm run preview
 ```
 
-## Features
-
-- Interactive chat interface with two AI personalities:
-  - Leo: Friendly and conversational
-  - Max: Witty and humorous
-- Real-time AI responses using Groq API
-- Responsive design with Tailwind CSS
-- TypeScript for enhanced type safety
-- Fast development with Vite
-- Clean and modern UI
-
 ## Project Structure
 
-- `src/pages/Chat.tsx`: Main chat interface component
-- `src/config/api-keys.ts`: API key configuration (create from example)
-- `src/components/`: Reusable UI components
-- `src/contexts/`: React context providers
-- `src/hooks/`: Custom React hooks
+```
+src/
+├── components/     # Reusable UI components
+├── config/        # Configuration files
+│   ├── api-keys.example.ts  # Example API configuration
+│   └── api-keys.ts          # Actual API configuration (gitignored)
+├── contexts/      # React context providers
+├── hooks/         # Custom React hooks
+├── lib/           # Utility functions and libraries
+└── pages/         # Main application pages
+    ├── Chat.tsx       # Chat mode interface
+    └── StudyChat.tsx  # Study mode interface
+```
 
 ## Security Note
 
-The `api-keys.ts` file is excluded from version control for security. Always keep your API keys private and never commit them to the repository.
+The `api-keys.ts` file is excluded from version control for security. Never commit your API keys to the repository. Always use the example file as a template and keep your actual API keys private.
+
+## Contributing
+
+1. Create a new branch for your feature
+2. Make your changes
+3. Create a pull request
+4. Ensure your PR description clearly describes the changes
+
+## License
+
+MIT
